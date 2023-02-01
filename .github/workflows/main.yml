@@ -1,11 +1,12 @@
-name: Test repo
-on:
-  push:
-    branches:
-      - refs/heads/GIN-29-github-actions-will-be-created-for-website
-jobs: 
-  Explore-GitHub-Actions:
+# inside .github/workflows/action.yml
+name: Add File to Bucket
+on: push
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/GIN-29-github-actions-will-be-created-for-website'
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
