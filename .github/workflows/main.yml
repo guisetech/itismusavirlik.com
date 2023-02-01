@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - refs/heads/GIN-29-github-actions-will-be-created-for-website
-jobs:
+jobs: 
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
