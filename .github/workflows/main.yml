@@ -4,12 +4,12 @@ on: push
 
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/GIN-29-github-actions-will-be-created-for-website'
     runs-on: ubuntu-latest
     environment: production
     steps:
       - uses: actions/checkout@master
-      - uses: guisetech/s3-upload-action@master
+      - uses: edgeetechs/s3-upload-action@master
         with:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
