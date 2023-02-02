@@ -4,7 +4,7 @@ on: push
 
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/GIN-29-github-actions-will-be-created-for-website'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: production
     steps:
@@ -14,5 +14,5 @@ jobs:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ secrets.AWS_S3_BUCKET }}
-          source_dir: 'public'
-          destination_dir: ''
+          source_dir: "public"
+          destination_dir: ""
