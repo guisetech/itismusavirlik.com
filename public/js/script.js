@@ -181,29 +181,8 @@
     }
 
 
-    //Contact Us
-    $("#form-elements").submit(function () {
-        //get input field values
-        var user_name = $('input[name=name]').val();
-        var user_email = $('input[name=email]').val();
-        var user_telephone = $('input[name=phone]').val();
-        var user_message = $('textarea[name=message]').val();
-
-        //simple validation at client's end
-        var proceed = false;
-        if (user_name && user_email && user_message) {
-            proceed = true;
-        }
-        //everything looks good! proceed...
-        if (proceed) {
-            //data to be sent to server
-            var post_data;
-            post_data = { 'Name': user_name, 'Email': user_email, 'Phone': user_telephone, 'Message': user_message };
-
-            //Ajax post data to server
-            makeAjaxCall('api/Common/ContactUs', post_data, successfulCallBack, errorCallBack);
-        }
-    });
+   
+    
 
     //reset previously set border colors and hide all message on .keyup()
     $("#form-elements input, #form-elements textarea").keyup(function () {
